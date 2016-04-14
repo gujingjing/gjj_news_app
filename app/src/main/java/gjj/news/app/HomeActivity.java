@@ -1,5 +1,6 @@
 package gjj.news.app;
 
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -15,6 +16,9 @@ import com.nispok.snackbar.Snackbar;
 import com.nispok.snackbar.SnackbarManager;
 
 import butterknife.Bind;
+import gjj.news.app.activity.ScrollHiddenTootalbarActivity;
+import gjj.news.app.activity.TabLayoutTestActivity;
+import gjj.news.app.activity.TootalBarTestActivity;
 import gjj.news.app.base.BaseActivity;
 import gjj.news.app.factory.FragmentFactory;
 import gjj.news.app.fragment.KnowledgeFragment;
@@ -38,6 +42,7 @@ public class HomeActivity extends BaseActivity implements Toolbar.OnMenuItemClic
     private String currentType;
     private Fragment currentFragment;
 
+    private Intent intent;
     @Override
     public int initView() {
         return R.layout.activity_home;
@@ -98,22 +103,31 @@ public class HomeActivity extends BaseActivity implements Toolbar.OnMenuItemClic
                 switch (item.getItemId()) {
                     case R.id.navigation_original1:
 //                        replace(Constants.MENU_NEWS);
-//                        break;
+                        showTest(item);
+                        break;
                     case R.id.navigation_original2:
 //                        replace(Constants.MENU_PIC);
-//                        break;
+                        showTest(item);
+                        break;
                     case R.id.navigation_original3:
-//                        break;
+                        showTest(item);
+                        intent=new Intent(HomeActivity.this, TabLayoutTestActivity.class);
+                        startActivity(intent);
+                        drawerLayout.closeDrawers();
+//                        drawerLayout.openDrawer(Gravity.LEFT);
+                        break;
                     case R.id.navigation_original4:
-                        item.setChecked(true);
-                        SnackbarManager.show(
-                                Snackbar.with(context)
-                                        .text(item.getTitle()));
+                        showTest(item);
+                        intent=new Intent(HomeActivity.this, TootalBarTestActivity.class);
+                        startActivity(intent);
+                        drawerLayout.closeDrawers();
                         break;
                     case R.id.navigation_original5:
-                        SnackbarManager.show(
-                                Snackbar.with(context)
-                                        .text(item.getTitle()));
+                        showTest(item);
+                        intent=new Intent(HomeActivity.this, ScrollHiddenTootalbarActivity.class);
+                        startActivity(intent);
+                        drawerLayout.closeDrawers();
+
                         break;
                     case R.id.navigation_original6:
                         SnackbarManager.show(
@@ -132,6 +146,12 @@ public class HomeActivity extends BaseActivity implements Toolbar.OnMenuItemClic
     }
 
 
+    public void showTest(MenuItem item){
+        item.setChecked(true);
+        SnackbarManager.show(
+                Snackbar.with(context)
+                        .text(item.getTitle()));
+    }
     @Override
     public boolean notFiniActivity() {
         return true;

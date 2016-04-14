@@ -32,6 +32,21 @@
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustPan" />
+        <!--tablayout测试界面-->
+        <activity
+            android:name=".activity.TabLayoutTestActivity"
+            android:label="@string/app_name"
+            android:theme="@style/swipeFinishActivityTheme" />
+        <!--TootalBar测试界面-->
+        <activity
+            android:name=".activity.TootalBarTestActivity"
+            android:label="TootalBarTestActivity"
+            android:theme="@style/swipeFinishActivityTheme" />
+        <!--ScrollHiddenTootalbar测试界面-->
+        <activity
+            android:name=".activity.ScrollHiddenTootalbarActivity"
+            android:label="ScrollHiddenTootalbarActivity"
+            android:theme="@style/swipeFinishActivityTheme" />
     </application>
 
 </manifest>

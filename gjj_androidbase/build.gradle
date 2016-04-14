@@ -28,8 +28,10 @@ dependencies {
     testCompile 'junit:junit:4.12'
     //--------------------------------android supportLib库---------------------------------------------------------------------------
     compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.android.support:design:23.1.1'//design控件库
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'com.android.support:cardview-v7:23.1.1'
+
     //--------------------------------内存和测试和工具库---------------------------------------------------------------------------
     compile 'com.jaeger.statusbaruitl:library:1.0.0'//statbar标题栏颜色设置
     //内存泄漏管理--leakcanary--or 1.4-beta1

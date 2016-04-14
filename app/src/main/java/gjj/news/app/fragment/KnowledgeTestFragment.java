@@ -54,7 +54,7 @@ public class KnowledgeTestFragment extends BaseFragment {
         pager.setAdapter(adapter);
         tabs.setTabMode(TabLayout.MODE_SCROLLABLE);
 
-        tabs.setupWithViewPager(pager);
+//        tabs.setupWithViewPager(pager);
         tabs.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
